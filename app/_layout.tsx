@@ -24,10 +24,7 @@ export default function RootLayout() {
       <QueryClientProvider client={queryClient}>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ header: () => <Header /> }} />
-          <Stack.Screen
-            name="(movie)"
-            options={{ header: () => <Header showBack transparent /> }}
-          />
+          <Stack.Screen name="(movie)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />

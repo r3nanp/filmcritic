@@ -135,7 +135,14 @@ export default function MovieDetails() {
         <View style={styles.actionList}>
           <View style={styles.myList}>
             {hasTrailer && (
-              <TouchableOpacity style={styles.trailerButton} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.trailerButton}
+                onPress={() => {
+                  router.push(
+                    `/(movie)/${movieDetails?.id}/trailer?url=${movieDetails?.trailerUrl}`
+                  );
+                }}
+              >
                 <Text style={styles.trailerButtonText}>Ver trailer</Text>
               </TouchableOpacity>
             )}

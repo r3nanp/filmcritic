@@ -39,7 +39,6 @@ Later, the project was migrated to a full **Expo Router** setup to take advantag
 
 - **React Native** with **Expo**
 - **Expo Router** for navigation
-- **Tailwind CSS** via NativeWind
 - **Custom UI components and animations**
 
 ---

@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 24,
     fontWeight: "semibold",
+    fontFamily: "semibold",
     marginLeft: 16,
     marginTop: 16,
     marginBottom: 8,

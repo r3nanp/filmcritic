@@ -6,6 +6,7 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 
+import { Header } from "@/components/Header";
 import { queryClient } from "@/lib/query-client";
 
 export default function RootLayout() {
@@ -22,7 +23,11 @@ export default function RootLayout() {
     <ThemeProvider value={DefaultTheme}>
       <QueryClientProvider client={queryClient}>
         <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ header: () => <Header /> }} />
+          <Stack.Screen
+            name="(movie)"
+            options={{ header: () => <Header showBack transparent /> }}
+          />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />

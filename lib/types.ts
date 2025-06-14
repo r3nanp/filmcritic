@@ -24,6 +24,18 @@ export type TmdbMovie = {
   vote_count: number;
 };
 
+export type TmdbVideo = {
+  id: string;
+  key: string;
+  name: string;
+  site: string;
+  type: string;
+};
+
+export type TmdbVideoResponse = {
+  results: TmdbVideo[];
+};
+
 export type TmdbMovieResponse = {
   page: number;
   results: TmdbMovie[];

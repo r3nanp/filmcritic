@@ -20,8 +20,7 @@ import { useHome } from "@/hooks/use-home";
 import { useSearchMovie } from "@/hooks/use-search-movie";
 
 export default function HomeScreen() {
-  const { fetchHome, isLoading, movies, popular, trending, upcoming } =
-    useHome();
+  const { isLoading, movies, popular, trending, upcoming } = useHome();
   const { searchQuery, searchResults, searchStatus, setSearchQuery } =
     useSearchMovie();
 
@@ -49,21 +48,8 @@ export default function HomeScreen() {
   };
 
   useEffect(() => {
-    fetchHome();
-  }, [fetchHome]);
-
-  useEffect(() => {
     startAnimations();
   }, [startAnimations]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (searchQuery.trim()) {
-      }
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, [searchQuery]);
 
   const fadeStyle = useAnimatedStyle(() => ({
     opacity: fadeAnim.value,
@@ -207,7 +193,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   searchButton: {
-    backgroundColor: "#e50914",
+    backgroundColor: Colors.primary,
     padding: 8,
     borderRadius: 8,
   },

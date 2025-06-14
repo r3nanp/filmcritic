@@ -1,6 +1,6 @@
 import { TmdbMovie } from "@/lib/types";
 import { resolveTmdbImage } from "@/utils/resolve-tmdb-image";
-import { useNavigation } from "expo-router";
+import { useRouter } from "expo-router";
 import { useEffect } from "react";
 import { Dimensions, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Animated, {
@@ -24,7 +24,7 @@ export function MovieItem({
   movie: TmdbMovie;
   index: number;
 }) {
-  const navigation = useNavigation();
+  const router = useRouter();
   const anim = useSharedValue(0);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export function MovieItem({
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => {
-          // navigation.navigate("");
+          router.push(`/(movie)/${movie.id}`);
         }}
         style={styles.card}
       >

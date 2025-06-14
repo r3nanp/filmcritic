@@ -72,6 +72,8 @@ export const useHome = () => {
 
   const results = useQueries({ queries: endpoints });
 
+  console.dir(results, { depth: null });
+
   const isLoading = results.some((result) => result.isLoading);
   const isError = results.some((result) => result.isError);
 

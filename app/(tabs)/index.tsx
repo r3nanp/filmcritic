@@ -19,7 +19,7 @@ import { Colors } from "@/constants/Colors";
 import { useHome } from "@/hooks/use-home";
 import { useSearchMovie } from "@/hooks/use-search-movie";
 
-export function HomeScreen() {
+export default function HomeScreen() {
   const { fetchHome, isLoading, movies, popular, trending, upcoming } =
     useHome();
   const { searchQuery, searchResults, searchStatus, setSearchQuery } =
@@ -126,7 +126,7 @@ export function HomeScreen() {
         scrollEventThrottle={16}
       >
         <Animated.View style={fadeStyle}>
-          {searchStatus === "pending" ? (
+          {searchStatus === "pending" && searchQuery.length > 0 ? (
             <MovieList
               isLoading
               movies={searchResults}
